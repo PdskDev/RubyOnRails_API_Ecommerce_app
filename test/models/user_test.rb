@@ -2,17 +2,17 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   test 'utilisateur avec email valide doit être valide' do
-    userEmailValide = User.new(email: 'user@usertest.com', password_digest: 'Pass123')
-    assert userEmailValide.valid?
+    user_email_valide = User.new(email: 'user@usertest.com', password_digest: 'Pass123')
+    assert user_email_valide.valid?
   end
 
   test 'utilisateur avec email invalide doit être invalide' do
-    userEmailInvalide = User.new(email: 'user_usertest.com', password_digest: 'Pass123')
-    assert_not userEmailInvalide.valid?
+    user_email_invalide = User.new(email: 'user_usertest.com', password_digest: 'Pass123')
+    assert_not user_email_invalide.valid?
   end
 
   test 'utilisateur avec email dupliqué est invalide' do
-    userEmailDuplique = User.new(email: 'admin@nadetdev.com', password_digest: 'Pass123')
-    assert_not userEmailDuplique.valid?
+    user_email_duplique = User.new(email: 'admin@nadetdev.com', password_digest: 'Pass123')
+    assert_not user_email_duplique.valid?
   end
 end
