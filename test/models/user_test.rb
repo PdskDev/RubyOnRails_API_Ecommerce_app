@@ -15,4 +15,9 @@ class UserTest < ActiveSupport::TestCase
     user_email_duplique = User.new(email: 'admin@nadetdev.com', password_digest: 'Pass123')
     assert_not user_email_duplique.valid?
   end
+
+  test 'utilisateur avec mot de passe invalide' do
+    user_password_invalid = User.new(email: 'jmb@nadetdev.com', password_digest: 'Pass1')
+    assert_not user_password_invalid.valid?
+  end
 end
