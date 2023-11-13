@@ -27,5 +27,17 @@ test 'ne doit pas créer un nouvel utilisateur avec un email existant' do
     assert_response :unprocessable_entity 
 end
 
+test 'doit mettre à jour un utilisateur' do
+    patch api_v1_user_url(@user), params: { user: { email: @user.email, 
+    password: 'update12345' } }, as: :json
+    assert_response :success
+end
+
+test 'ne doit pas mettre à jour un utilisateur quand les paramètres envoyés sont erronés' do
+    patch api_v1_user_url(@user), params: { user: { email: 'non_trouve', 
+    password:'P@ss12345' } }, as: :json
+    assert_response :unprocessable_entity
+end
+
 end
 
