@@ -2,7 +2,7 @@
 
 one:
   email: admin@nadetdev.com
-  password_digest: Pass1234
+  password_digest: hashed_password
 
 two:
   email: demo@nadetdev.com
