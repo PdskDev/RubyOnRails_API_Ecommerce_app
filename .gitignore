@@ -52,3 +52,10 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+.idea/vcs.xml
+.idea/misc.xml
+.idea/dataSources.xml
+.idea/modules.xml
+.idea/market_place_api.iml
+.idea/.gitignore
+.gitignore
