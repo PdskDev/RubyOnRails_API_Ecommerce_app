@@ -2,8 +2,8 @@
 
 one:
   email: admin@nadetdev.com
-  password_digest: hashed_password
+  password_digest: <%= BCrypt::Password.create('Password@123') %>
 
 two:
   email: demo@nadetdev.com
-  password_digest: Pass1234
+  password_digest: <%= BCrypt::Password.create('Password@123') %>
